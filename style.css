@@ -1,0 +1,168 @@
+/* 9. remove default format by doing a reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 10. add a background */
+body {
+  background-image: linear-gradient(120deg, #f6d365, #fda085);
+  color: rgb(255, 255, 255);
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  font-size: 2rem;
+  min-height: 20vh;
+}
+
+/* 11. center header and form */
+header,
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  padding: 0;
+}
+/* form {
+  max-height: 10vh;
+} */
+
+/* 12. style button and input box */
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: wheat;
+  outline: none;
+}
+form button {
+  color: #fda085;
+  cursor: pointer;
+  background: white;
+  transition: all 0.3s ease;
+  border: none;
+}
+.todo-button:hover {
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  transform: translateY(-3px);
+}
+
+/* 17. style to do list buttons */
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+.todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex; /* brings content next to each other */
+  justify-content: space-between;
+  align-items: center; /*bring text in the center of the box*/
+
+  /*25. for the check box */
+  transition: all 0.5s ease;
+
+  /* 26. create fall animation for delete in js */
+}
+.todo li {
+  flex: 1; /*pushes the buttons next to each other*/
+}
+.trash-btn,
+.complete-btn {
+  background: rgb(246, 229, 196);
+  border: none;
+  color: #fd977b;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.trash-btn:hover {
+  box-shadow: 0px 15px 20px #fd977b;
+  transform: translateY(-3px);
+}
+.complete-btn {
+  color: rgb(111, 211, 111);
+}
+.complete-btn:hover {
+  box-shadow: 0px 15px 20px rgb(111, 211, 111);
+  transform: translateY(-3px);
+}
+
+/* 18. Remove default text from list */
+
+/*19. add padding to each li so the text and buttons are not right next to each other  */
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+/* 22. fix trash and check button so itag does not cover the button [so you can atucally use the button under the itag] */
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+/* 24. completed implementation */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+  /* 25. add transition for the line through */
+}
+
+/* 27. impletment trasnition fall */
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0; /*28. doesnt delete the box you just cant see it, go back to js to implement delete*/
+}
+
+/* 30. style select menu */
+select {
+  /* remove defalut styles */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: none;
+
+  color: black;
+  background: wheat;
+  opacity: 95%;
+  font-size: large;
+  font-family: "Poppins", sans-serif;
+  width: 13rem;
+  cursor: pointer;
+  padding: 1rem;
+  align-items: center; /*bring text in the center of the box*/
+}
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+/* get arrow back in the menu */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background: #f58754;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+}
+.select:hover::after {
+  background: #f89f76;
+  box-shadow: 0px 15px 20px rgb(251, 147, 203);
+  transform: translateY(-3px);
+}
+
+/* 31.implement filter button in js */
